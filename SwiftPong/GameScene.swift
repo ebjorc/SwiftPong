@@ -15,6 +15,9 @@ class GameScene: SKScene {
     var player1 = SKSpriteNode()
     var player2 = SKSpriteNode()
     
+    var player1ScoreLabel = SKLabelNode()
+    var player2ScoreLabel = SKLabelNode()
+    
     let ballSpeed = 20
     
     var score = (player1Score: 0, player2Score: 0)
@@ -24,6 +27,9 @@ class GameScene: SKScene {
         player1 = self.childNode(withName: "player1") as! SKSpriteNode
         player2 = self.childNode(withName: "player2") as! SKSpriteNode
         
+        player1ScoreLabel = self.childNode(withName: "player1ScoreLabel") as! SKLabelNode
+        player2ScoreLabel = self.childNode(withName: "player2ScoreLabel") as! SKLabelNode
+        
         // Give the ball a start direction
         applyRandomStartDirection()
     
@@ -31,6 +37,7 @@ class GameScene: SKScene {
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
         border.friction = 0
         border.restitution = 1
+        print(-frame.size.height/2.0 - ball.size.height)
         
         self.physicsBody = border
     }
@@ -44,6 +51,17 @@ class GameScene: SKScene {
             if location.y < 0 {
                 player1.run(SKAction.moveTo(x: location.x, duration: 0.2))
             }
+        }
+    }
+    
+    func updateScore(playerWhoScored: SKSpriteNode){
+        if playerWhoScored == player1 {
+            score.player1Score += 1
+            player1ScoreLabel.text = "\(score.player1Score)"
+        }
+        else if playerWhoScored == player2 {
+            score.player2Score += 1
+            player2ScoreLabel.text = "\(score.player2Score)"
         }
     }
     
@@ -72,13 +90,15 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        if ball.position.y < player1.position.y - ball.size.height*2 {
-            score.player2Score += 1
+        
+        // Check if player 1 should get a point
+        if ball.position.y > (frame.size.height/2.0 - ball.size.height) {
+            updateScore(playerWhoScored: player1)
             resetBall()
         }
-        
-        if ball.position.y > player2.position.y + ball.size.height*2 {
-            score.player1Score += 1
+        // Check if player 2 should get a point
+        else if ball.position.y < (-frame.size.height/2.0 + ball.size.height) {
+            updateScore(playerWhoScored: player2)
             resetBall()
         }
     }
