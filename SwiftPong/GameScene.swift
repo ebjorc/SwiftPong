@@ -18,34 +18,38 @@ class GameScene: SKScene {
     var player1ScoreLabel = SKLabelNode()
     var player2ScoreLabel = SKLabelNode()
     
-    let ballSpeed = 20
+    let ballSpeed = 10
     
     var score = (player1Score: 0, player2Score: 0)
     
     override func didMove(to view: SKView) {
         ball = self.childNode(withName: "ball") as! SKSpriteNode
+        
         player1 = self.childNode(withName: "player1") as! SKSpriteNode
+        player1.position.y  = (-self.frame.height/2) + (player1.frame.height*2)
+        
         player2 = self.childNode(withName: "player2") as! SKSpriteNode
+        player2.position.y  = (self.frame.height/2) - (player2.frame.height*2)
         
         player1ScoreLabel = self.childNode(withName: "player1ScoreLabel") as! SKLabelNode
         player2ScoreLabel = self.childNode(withName: "player2ScoreLabel") as! SKLabelNode
-        
-        // Give the ball a start direction
-        applyRandomStartDirection()
     
         // Setup the border
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
         border.friction = 0
         border.restitution = 1
-        print(-frame.size.height/2.0 - ball.size.height)
+        border.categoryBitMask = 4
         
         self.physicsBody = border
+        
+        // Give the ball a start direction
+        applyRandomStartDirection()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
-            if location.y > 0 {
+            if location.y > 0 && currentGameType == .twoPlayers {
                 player2.run(SKAction.moveTo(x: location.x, duration: 0.2))
             }
             if location.y < 0 {
@@ -65,10 +69,8 @@ class GameScene: SKScene {
         }
     }
     
-    
-    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        touchesBegan(touches, with: event)
     }
     
     func resetBall(){
@@ -90,6 +92,17 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        
+        switch currentGameType  {
+        case .easy:
+            player2.run(SKAction.moveTo(x: ball.position.x, duration: 1.25))
+        case .medium:
+            player2.run(SKAction.moveTo(x: ball.position.x, duration: 1))
+        case .hard:
+            player2.run(SKAction.moveTo(x: ball.position.x, duration: 0.75))
+        case .twoPlayers:
+            break
+        }
         
         // Check if player 1 should get a point
         if ball.position.y > (frame.size.height/2.0 - ball.size.height) {

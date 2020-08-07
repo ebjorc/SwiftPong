@@ -1,24 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MA9-iH-pQu">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="VOx-xT-1YM">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="MA9-iH-pQu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="euD-5q-5IW">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="znX-ec-Oio" kind="relationship" relationship="rootViewController" id="EMD-BT-hYJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AxA-BL-X1p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1522" y="102"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="X0S-i0-T56">
+            <objects>
+                <viewController id="znX-ec-Oio" customClass="MenuViewController" customModule="SwiftPong" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z1n-rU-rfT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUR-Zq-0EY">
+                                <rect key="frame" x="166" y="164" width="82" height="30"/>
+                                <state key="normal" title="Two Players"/>
+                                <connections>
+                                    <action selector="twoPlayerButtonPressed:" destination="znX-ec-Oio" eventType="touchUpInside" id="fYm-ju-H54"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uc5-CK-pc5">
+                                <rect key="frame" x="190.5" y="385" width="33" height="30"/>
+                                <state key="normal" title="Easy"/>
+                                <connections>
+                                    <action selector="easyButtonPressed:" destination="znX-ec-Oio" eventType="touchUpInside" id="vIY-mN-fy3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OA1-Md-unl">
+                                <rect key="frame" x="179.5" y="435" width="55" height="30"/>
+                                <state key="normal" title="Medium"/>
+                                <connections>
+                                    <action selector="mediumButtonPressed:" destination="znX-ec-Oio" eventType="touchUpInside" id="jXi-Kx-ftg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KU8-Pm-Xwr">
+                                <rect key="frame" x="190" y="485" width="34" height="30"/>
+                                <state key="normal" title="Hard"/>
+                                <connections>
+                                    <action selector="hardButtonPressed:" destination="znX-ec-Oio" eventType="touchUpInside" id="oYO-iI-oat"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One Player Levels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPq-0W-vpc">
+                                <rect key="frame" x="139" y="344" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uPq-0W-vpc" firstAttribute="centerX" secondItem="AYB-4G-0D7" secondAttribute="centerX" id="8hV-hN-fq9"/>
+                            <constraint firstItem="Uc5-CK-pc5" firstAttribute="centerX" secondItem="AYB-4G-0D7" secondAttribute="centerX" id="C4y-GE-ncI"/>
+                            <constraint firstItem="KU8-Pm-Xwr" firstAttribute="centerX" secondItem="AYB-4G-0D7" secondAttribute="centerX" id="Gx1-51-hfz"/>
+                            <constraint firstItem="OA1-Md-unl" firstAttribute="top" secondItem="Uc5-CK-pc5" secondAttribute="bottom" constant="20" id="Lzt-Q1-Pcs"/>
+                            <constraint firstItem="AUR-Zq-0EY" firstAttribute="centerX" secondItem="AYB-4G-0D7" secondAttribute="centerX" id="MQV-wR-EYR"/>
+                            <constraint firstItem="Uc5-CK-pc5" firstAttribute="top" secondItem="uPq-0W-vpc" secondAttribute="bottom" constant="20" id="PlY-6S-ut8"/>
+                            <constraint firstItem="AUR-Zq-0EY" firstAttribute="top" secondItem="AYB-4G-0D7" secondAttribute="top" constant="120" id="a6D-L3-5wR"/>
+                            <constraint firstItem="OA1-Md-unl" firstAttribute="centerX" secondItem="AYB-4G-0D7" secondAttribute="centerX" id="cK7-fq-IjU"/>
+                            <constraint firstItem="uPq-0W-vpc" firstAttribute="top" secondItem="AUR-Zq-0EY" secondAttribute="bottom" constant="150" id="hPj-iA-sxd"/>
+                            <constraint firstItem="KU8-Pm-Xwr" firstAttribute="top" secondItem="OA1-Md-unl" secondAttribute="bottom" constant="20" id="rlk-A5-u3a"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AYB-4G-0D7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="l7l-sV-z1A"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yJL-1v-ESJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-705.79710144927537" y="102.45535714285714"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameVC" id="BV1-FR-VrT" customClass="GameViewController" customModule="SwiftPong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="141" y="103"/>
         </scene>
     </scenes>
 </document>

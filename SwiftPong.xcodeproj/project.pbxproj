@@ -15,6 +15,7 @@
 		4961049524DB352C002338BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4961049324DB352C002338BE /* Main.storyboard */; };
 		4961049724DB352D002338BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4961049624DB352D002338BE /* Assets.xcassets */; };
 		4961049A24DB352D002338BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4961049824DB352D002338BE /* LaunchScreen.storyboard */; };
+		4971A93224DD45AB000F9341 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4971A93124DD45AB000F9341 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4961049624DB352D002338BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4961049924DB352D002338BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4961049B24DB352D002338BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4971A93124DD45AB000F9341 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				4961048F24DB352C002338BE /* GameScene.swift */,
 				4961049124DB352C002338BE /* GameViewController.swift */,
 				4961049324DB352C002338BE /* Main.storyboard */,
+				4971A93124DD45AB000F9341 /* MenuViewController.swift */,
 				4961049624DB352D002338BE /* Assets.xcassets */,
 				4961049824DB352D002338BE /* LaunchScreen.storyboard */,
 				4961049B24DB352D002338BE /* Info.plist */,
@@ -149,6 +152,7 @@
 				4961049024DB352C002338BE /* GameScene.swift in Sources */,
 				4961049224DB352C002338BE /* GameViewController.swift in Sources */,
 				4961048A24DB352C002338BE /* AppDelegate.swift in Sources */,
+				4971A93224DD45AB000F9341 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
