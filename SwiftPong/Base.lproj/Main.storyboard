@@ -31,35 +31,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUR-Zq-0EY">
-                                <rect key="frame" x="166" y="164" width="82" height="30"/>
+                                <rect key="frame" x="155" y="164" width="104" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Two Players"/>
                                 <connections>
                                     <action selector="twoPlayerButtonPressed:" destination="znX-ec-Oio" eventType="touchUpInside" id="fYm-ju-H54"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uc5-CK-pc5">
-                                <rect key="frame" x="190.5" y="385" width="33" height="30"/>
+                                <rect key="frame" x="190.5" y="391" width="33" height="30"/>
                                 <state key="normal" title="Easy"/>
                                 <connections>
                                     <action selector="easyButtonPressed:" destination="znX-ec-Oio" eventType="touchUpInside" id="vIY-mN-fy3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OA1-Md-unl">
-                                <rect key="frame" x="179.5" y="435" width="55" height="30"/>
+                                <rect key="frame" x="179.5" y="441" width="55" height="30"/>
                                 <state key="normal" title="Medium"/>
                                 <connections>
                                     <action selector="mediumButtonPressed:" destination="znX-ec-Oio" eventType="touchUpInside" id="jXi-Kx-ftg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KU8-Pm-Xwr">
-                                <rect key="frame" x="190" y="485" width="34" height="30"/>
+                                <rect key="frame" x="190" y="491" width="34" height="30"/>
                                 <state key="normal" title="Hard"/>
                                 <connections>
                                     <action selector="hardButtonPressed:" destination="znX-ec-Oio" eventType="touchUpInside" id="oYO-iI-oat"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One Player Levels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPq-0W-vpc">
-                                <rect key="frame" x="139" y="344" width="136" height="21"/>
+                                <rect key="frame" x="139" y="350" width="136" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
